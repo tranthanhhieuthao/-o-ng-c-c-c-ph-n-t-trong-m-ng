@@ -33,11 +33,13 @@
     function ham2() {
         let e="<hr width=\"30%\" align=\"left\"/>";
         let i=mang.length-1;
-        for (let n=0;n<mang.length;n++){
-        daomang[n]=mang[i];
+        for (let n=0;n<mang.length/2;n++){
+        let temp=mang[n];
+        mang[n]=mang[i];
+        mang[i]=temp;
         i--
         }
-        e +="daomang"+"="+"["+daomang.valueOf()+"]";
+        e +="daomang"+"="+"["+mang.valueOf()+"]";
         document.getElementById("daomang").innerHTML=e;
     }
 </script>
