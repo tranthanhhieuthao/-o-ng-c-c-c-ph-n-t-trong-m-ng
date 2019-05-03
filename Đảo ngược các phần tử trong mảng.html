@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<b>Đảo Ngược các phần tử trong mảng</b>
+<br/>
+<p>Nhập các phần tử trong mảng cần đảo</p>
+<input id="nhapphantu"/>
+<input type="button" value="Add" onclick="ham()"/>
+<input type="button" value="MangVuaNhap" onclick="ham1()"/>
+<input type="button" value="DaoMangVuaNhap" onclick="ham2()"/>
+<br/>
+<p id="mang"></p>
+<p id="daomang"></p>
+<script>
+    let mang= new Array();
+    let daomang= new Array();
+    let i=0;
+    function ham(){
+        let nhapphantu=document.getElementById("nhapphantu").value;
+        mang.push(nhapphantu);
+        i++;
+        document.getElementById("nhapphantu").value="";
+    }
+    function ham1(){
+        let e="<hr width=\"30%\" align=\"left\"/>";
+        e +="mang"+"="+"["+mang.valueOf()+"]";
+        document.getElementById("mang").innerHTML=e;
+    }
+    function ham2() {
+        let e="<hr width=\"30%\" align=\"left\"/>";
+        let i=mang.length-1;
+        for (let n=0;n<mang.length;n++){
+        daomang[n]=mang[i];
+        i--
+        }
+        e +="daomang"+"="+"["+daomang.valueOf()+"]";
+        document.getElementById("daomang").innerHTML=e;
+    }
+</script>
+</body>
+</html>
